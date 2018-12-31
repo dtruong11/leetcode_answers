@@ -15,6 +15,12 @@ Example 2:
 Answer: 3
 */
 
+/*
+  1. Count the connected components in graph 
+  2. Step 1: edge cases, return 0
+  3. Step 2: iterate through el, encounter 1 => result++ && turn adjacent neighbors as 0 
+  4. Step 3: dfs function, if encounter 1 => turn that & its neighbors into 0
+*/
 const numIslands = (grid) => {
   let len = grid.length, 
   len1 = grid[0].length, 
@@ -31,7 +37,6 @@ const numIslands = (grid) => {
   return result
 }
 
-//
 const dfs = (grid, i, j, len, len1) => {
   if (i >= len || j >= len1 || i < 0 || j < 0) return 
   if (grid[i][j] === '1') {
